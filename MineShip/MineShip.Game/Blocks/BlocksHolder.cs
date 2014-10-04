@@ -21,8 +21,9 @@ namespace MineShip.Blocks
         public Vector2 PositionOrigin { get; set; }
         public Vector2 RotationOrigin { get; set; }
         private MineShipWorld _world;
-        private Sprite _allTexture;
-        
+        private Texture _allTextures;
+     /*   private RenderTarget _allTexturesTarget;
+        private DepthStencilBuffer _depthBuffer;*/
 
         private static const float SCALE_1_BLOCK_SIZE = 20;
         private static const float DEFAULT_SCALE = 1;
@@ -37,20 +38,46 @@ namespace MineShip.Blocks
             this.Angle = DEFAULT_ANGLE;
             this._blocks = new Dictionary<Vector2, AbstractBlock>();
 
-            this._allTexture = Texture2D.New(
+            this._allTextures = Texture2D.New(
+                this._world.getGame().GraphicsDevice, 
+                (int)SCALE_1_BLOCK_SIZE,
+                (int)SCALE_1_BLOCK_SIZE, PixelFormat.R8G8B8A8_UNorm, TextureFlags.ShaderResource);
+
+         //   this._allTextures.SetData<Color>(
+           //    this._world.getGame().getAssetManager().Load<Texture2D>("Blocks/Textures/metal1_block"));
+
+            
+
+        /*    this._allTexturesTarget = this._allTextures.ToRenderTarget();
+
+            this._depthBuffer = Texture2D.New(this._world.getGame().GraphicsDevice,
+                 (int)SCALE_1_BLOCK_SIZE,
+                (int)SCALE_1_BLOCK_SIZE, PixelFormat.D16_UNorm, TextureFlags.DepthStencil).ToDepthStencilBuffer(false);
+            
+            // settings the render targets
+            this._world.getGame().GraphicsDevice.SetRenderTarget(_depthBuffer, _allTexturesTarget);
+ 
+            // setting the default render target
+            this._world.getGame().GraphicsDevice.SetRenderTarget(
+                this._world.getGame().GraphicsDevice.DepthStencilBuffer, 
+                this._world.getGame().GraphicsDevice.BackBuffer);
+            */
+           // this._allTexturesTarget.Texture = this._world.getGame().getAssetManager().Load<Texture2D>("Blocks/Textures/metal1_block");
+                
+                /*Texture2D.New(
                 this._world.getGame().GraphicsDevice, 
                 (int)SCALE_1_BLOCK_SIZE,
                 (int)SCALE_1_BLOCK_SIZE, PixelFormat.R8G8B8A8_UNorm, TextureFlags.ShaderResource).ToRenderTarget();
-
+                */
                // test
-            ImageElement i = new ImageElement();
+          /*  ImageElement i = new ImageElement();
             i.Source = new UIImage((this._world.getGame().getAssetManager().Load<Texture2D>("Blocks/Textures/metal1_block")));
-            this._allTexture.Texture..Children.Add(i);
+            this._allTexture.Texture..Children.Add(i);*/
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this._allTexture., this.Position);
+          //  spriteBatch.Draw(_allTexturesTarget.Texture, this.Position);
         }
     }
 }
