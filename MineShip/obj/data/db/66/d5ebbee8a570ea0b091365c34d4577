@@ -1,0 +1,6 @@
+/// <summary>
+/// Performs AEN tessellation with TexCoord0.
+/// </summary>
+class TessellationDisplacementAEN : TessellationAEN<TexCoord, TexCoord>
+{
+};

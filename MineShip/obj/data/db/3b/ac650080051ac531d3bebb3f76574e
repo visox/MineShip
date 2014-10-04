@@ -1,0 +1,10 @@
+/// <summary>
+/// Retrives view space normals from a Gbuffer.
+/// </summary>
+class NormalVSGBuffer : NormalVSBase, GBufferBase
+{
+    override stage void GenerateNormalVS_PS()
+    {
+        streams.vNormalVS = normalize(GBufferTexture.Load(int3(streams.ShadingPosition.xy, 0), 0).xyz);
+    }
+};

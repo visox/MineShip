@@ -1,0 +1,8 @@
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\MineShip.Windows\obj\Windows\Debug\MineShip.Windows.csprojResolveAssemblyReference.cache
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\Bin\Windows-Direct3D11\Debug\freetype.dll
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\Bin\Windows-Direct3D11\Debug\libcore.dll
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\Bin\Windows-Direct3D11\Debug\libbulletc.dll
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\Bin\Windows-Direct3D11\Debug\MineShip.exe
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\Bin\Windows-Direct3D11\Debug\MineShip.pdb
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\MineShip.Windows\obj\Windows\Debug\MineShip.exe
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\MineShip.Windows\obj\Windows\Debug\MineShip.pdb

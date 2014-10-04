@@ -1,0 +1,17 @@
+﻿/// <summary>
+/// Computes shading for all the groups of lights.
+/// </summary>
+class GroupShadingBase : ShadingBase
+{
+    ShadingGroup ShadingGroups[];
+
+    override stage float4 Shading()
+    {
+        float4 currentShading = 0.0f;
+        foreach (var shadingGroup in ShadingGroups)
+        {
+            currentShading += shadingGroup.ComputeShading();
+        }
+        return base.Shading() + currentShading;
+    }
+};

@@ -1,0 +1,11 @@
+/// <summary>
+/// Base class that enables lighting based on light properties, normal and relative position to the camera.
+/// </summary>
+class ComputeBRDFColor
+{
+    // lightDirection, normal and eye should be normalized
+	float3 Compute(float3 color, float3 lightDirection, float3 normal, float3 eye)
+	{
+		return color;
+	}
+};

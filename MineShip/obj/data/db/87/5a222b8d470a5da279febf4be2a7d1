@@ -1,0 +1,14 @@
+﻿/// <summary>
+/// Computes per-vertex diffuse shading.
+/// </summary>
+class ShadingDiffusePerVertex : ShadingDiffuse, ShadingPerVertex
+{
+    BRDFDiffuseBase brdfDiffuse = stage;
+
+    override float3 ComputeDiffuseInfluence(float3 albedo, int lightIndex)
+    {
+        float3 lightDirection = normalize(GetDirectionToLight(lightIndex));
+		float3 lightColor = LightColorsWithGamma[lightIndex];
+        return LightIntensities[lightIndex] * brdfDiffuse.ComputeDiffuseLighting(lightColor, lightDirection, streams.ShadingNormal, streams.ShadingEye);
+    }
+};

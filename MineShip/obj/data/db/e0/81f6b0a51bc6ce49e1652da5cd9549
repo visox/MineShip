@@ -1,0 +1,19 @@
+/// <summary>
+/// Provides a stream with the view space position (vertex or fragment) from the vertex attributes.
+/// </summary>
+class PositionVSStream : Transformation, PositionVSBase, ShaderBase, PositionStream
+{
+    // View space position
+    stream float4 vPositionVS : POSITION_VS;
+
+    stage override void VSMain()
+    {
+        base.VSMain();
+        streams.vPositionVS = mul(streams.Position, WorldView);
+    }
+
+    float3 PositionVS()
+    {
+        return streams.vPositionVS.xyz;
+    }
+};

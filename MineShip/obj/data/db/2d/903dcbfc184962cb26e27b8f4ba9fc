@@ -1,0 +1,15 @@
+class ComputeColorMultiply : ComputeColor
+{
+    ComputeColor color1;
+    ComputeColor color2;
+
+    override float4 Compute()
+    {
+        float4 tex1 = color1.Compute();
+        float4 tex2 = color2.Compute();
+
+        float4 mix1 = tex1 * tex2;
+
+        return mix1;
+    }
+};

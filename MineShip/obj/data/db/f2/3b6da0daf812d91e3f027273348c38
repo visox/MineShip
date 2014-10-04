@@ -1,0 +1,7 @@
+class Global
+{
+    cbuffer PerFrame {
+		stage float Time;
+		stage float TimeStep;
+    };
+};

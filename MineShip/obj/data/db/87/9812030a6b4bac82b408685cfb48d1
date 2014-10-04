@@ -1,0 +1,8 @@
+class ComputeColorTexture<Texture2D TTexture, Semantic TStream> : ComputeColor
+{
+    stage stream float2 TexCoord : TStream;
+
+    override float4 Compute() {
+        return TTexture.Sample(Texturing.Sampler, streams.TexCoord);
+    }
+};

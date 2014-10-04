@@ -1,0 +1,10 @@
+!EffectLibrary
+Id: 8e2998af-b8d6-4550-8264-16a4177ad19d
+BuildOrder: 1000
+Tags: []
+Permutations:
+    Keys:
+        Effect.Name: MineShipEffectMain
+        MaterialAsset.UseParameters: true
+        Mesh.UseParameters: true
+    Children: []

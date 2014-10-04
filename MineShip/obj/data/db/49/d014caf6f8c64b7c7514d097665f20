@@ -1,0 +1,14 @@
+﻿class ComputeColorTextureDynamicScaledOffset<Texture2D TTexture, Semantic TStream> : ComputeColor
+{
+    stage stream float2 TexCoord : TStream;
+
+    // -------------------------------------
+    // uniforms
+    // -------------------------------------
+    stage float2 Offset = float2(0,0);
+    stage float2 Scale = float2(1,1);
+
+    override float4 Compute() {
+        return TTexture.Sample(Texturing.Sampler, streams.TexCoord * Scale + Offset);
+    }
+};

@@ -1,0 +1,10 @@
+﻿/// <summary>
+/// Implements direction to light for point lights.
+/// </summary>
+class PointShadingBase : ShadingGroup
+{
+    override float3 GetDirectionToLight(int lightIndex)
+    {
+        return GetLightPosition(lightIndex) - streams.ShadingEyePosition;
+    }
+};

@@ -1,0 +1,10 @@
+﻿class ComputeColorConstantFloatLink<LinkType LinkName> : ComputeColor
+{
+    [Link("LinkName")]
+    stage float constantFloat;
+    
+    override float4 Compute()
+    {
+        return float4(constantFloat, constantFloat, constantFloat, constantFloat);
+    }
+};

@@ -1,0 +1,7 @@
+class ComputeColorFixed<float4 TVALUE> : ComputeColor
+{
+    override float4 Compute()
+    {
+        return TVALUE;
+    }
+};

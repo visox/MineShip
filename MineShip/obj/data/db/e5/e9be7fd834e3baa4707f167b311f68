@@ -1,0 +1,26 @@
+/// <summary>
+/// Defines the transformations steps, the associated methods nad inserts them into the pipeline.
+/// 3 steps are available for overriding: pre-transformation, transformation, post-transformation.
+/// </summary>
+class TransformationBase : ShaderBase
+{
+    // Need to split that more properly (with guaranted shader stages)
+    // VS for sure (usually skinning)
+    stage void PreTransformPosition() {}
+    // VS or DS (usually displacement mapping, etc...)
+    stage void TransformPosition() {}
+    // after TransformPosition (to generate ShadingPosition)
+    stage void PostTransformPosition() {}
+
+    stage void BaseTransformVS()
+    {
+        this.PreTransformPosition();
+        this.TransformPosition();
+        this.PostTransformPosition();
+    }
+
+    stage override void VSMain()
+    {
+        this.BaseTransformVS();
+    }
+};

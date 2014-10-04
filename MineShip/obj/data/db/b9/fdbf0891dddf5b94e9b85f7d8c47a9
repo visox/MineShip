@@ -1,0 +1,12 @@
+﻿/// <summary>
+/// Adds an ambient color.
+/// </summary>
+class AmbientShading : ShadingBase
+{
+    [Color] stage float4 AmbientColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
+
+    override stage float4 Shading()
+    {
+        return base.Shading() + AmbientColor;
+    }
+};

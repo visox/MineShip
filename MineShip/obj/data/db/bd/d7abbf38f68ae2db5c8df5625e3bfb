@@ -1,0 +1,12 @@
+﻿/// <summary>
+/// Computes diffuse albedo.
+/// </summary>
+class ShadingDiffuse : ShadingGroup
+{
+    AlbedoDiffuseBase albedoDiffuseBase = stage;
+    
+    override float3 ComputeDiffuseAlbedo()
+    {
+        return albedoDiffuseBase.DiffuseAlbedo().xyz;
+    }
+};

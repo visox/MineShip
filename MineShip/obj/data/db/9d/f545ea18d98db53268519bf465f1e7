@@ -1,0 +1,7 @@
+/// <summary>
+/// Defines the Gbuffer texture.
+/// </summary>
+class GBufferBase
+{
+    stage Texture2D GBufferTexture;
+};

@@ -1,0 +1,13 @@
+/// <summary>
+/// Defines the structures for shadow mapping.
+/// </summary>
+class ForwardShadowMapBase : ShadowMapBase, TransformationBase, Transformation, PositionStream
+{
+    stage clone override void PreTransformPosition()
+    {
+        base.PreTransformPosition();
+
+        float4 vPositionWS = mul(streams.Position, World);
+        this.ComputeShadowMapPositions(vPositionWS);
+    }
+};

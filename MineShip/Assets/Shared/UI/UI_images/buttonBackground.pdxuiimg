@@ -1,0 +1,13 @@
+!UIImage
+Id: 9a275bc5-ff47-4965-98d4-a7e136ddb4ca
+BuildOrder: 50
+Tags: []
+Texture: 10a5afe4-62d3-4a9d-9ee1-6e207e02b8d2:UI/textures/buttonBackground_texture
+Region:
+    X: 0
+    Y: 0
+    Width: 118
+    Height: 44
+UseEntireTextureAsRegion: false
+RegionRotation: NoRotation
+Borders: {X: 0, Y: 0, Z: 0, W: 0}

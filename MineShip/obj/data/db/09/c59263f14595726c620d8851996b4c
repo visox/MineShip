@@ -1,0 +1,6 @@
+﻿/// <summary>
+/// Enables per-vertex diffuse and per-pixel specular shading.
+/// </summary>
+class ShadingDiffusePerVertexSpecularPerPixel : ShadingDiffusePerVertex, ShadingSpecularPerPixel
+{
+};

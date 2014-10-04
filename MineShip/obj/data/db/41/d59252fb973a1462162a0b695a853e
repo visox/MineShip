@@ -1,0 +1,22 @@
+class ComputeColorMachoLifebar : ShadingBase, Texturing
+{
+    stage float FlipFactor;
+    stage float OverlayAmount;
+
+    override float4 Shading() {
+        if (FlipFactor > 0.0)
+            streams.TexCoord.x = 1.0 - streams.TexCoord.x;
+
+        float4 colorBackground= Texture1.Sample(LinearSampler, streams.TexCoord);
+        colorBackground.xyz *= colorBackground.a;
+        float4 colorGradient = Texture2.Sample(LinearSampler, streams.TexCoord);
+        float4 colorOverlay = Texture3.Sample(LinearSampler, streams.TexCoord);
+
+
+        float4 colorOverlayFinal = float4(colorGradient.rgb * colorOverlay.r * colorOverlay.a, colorOverlay.a);
+        colorOverlayFinal *= (streams.TexCoord.x < OverlayAmount) ? 1.0 : 0.0;
+
+        // blend(source, dest)  =  source.rgb + (dest.rgb * (1 - source.a)) 
+        return float4(colorOverlayFinal.rgb + colorBackground.rgb * (1.0 - colorOverlayFinal.a), colorBackground.a) ;
+    }
+};

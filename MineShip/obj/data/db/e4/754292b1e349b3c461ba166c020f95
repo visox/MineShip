@@ -1,0 +1,14 @@
+/// <summary>
+/// Shader used to debug PrePass lighting by outputing 2d-bounding-box as wireframe on the main rendertarget.
+/// </summary>
+class LightPrepassDebug : LightPrepass
+{
+    stream stage int lightIndex;
+
+    override void PSMain()
+    {
+        // Output a wireframe with the color of the light
+        LightInfo lightInfo = LightInfos[streams.lightIndex];
+        streams.ColorTarget = float4(lightInfo.color,1);
+    }
+};

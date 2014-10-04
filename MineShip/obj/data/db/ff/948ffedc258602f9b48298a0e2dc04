@@ -1,0 +1,10 @@
+/// <summary>
+/// Computes default shadow map color (white).
+/// </summary>
+class ShadowMapColor : ShadowBase, ComputeColor3
+{
+    override float3 Compute()
+    {
+        return 1;
+    }
+};

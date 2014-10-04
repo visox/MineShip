@@ -1,0 +1,5 @@
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\MineShip.Game\obj\Windows\Debug\MineShip.Game.csprojResolveAssemblyReference.cache
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\Bin\Windows-Direct3D11\Debug\MineShip.Game.dll
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\Bin\Windows-Direct3D11\Debug\MineShip.Game.pdb
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\MineShip.Game\obj\Windows\Debug\MineShip.Game.dll
+C:\Users\Michal\Documents\Paradox Projects\MineShip\MineShip\MineShip.Game\obj\Windows\Debug\MineShip.Game.pdb

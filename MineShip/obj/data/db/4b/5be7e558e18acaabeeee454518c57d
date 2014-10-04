@@ -1,0 +1,18 @@
+/// <summary>
+/// Transforms the position of the vertex in world space first then in projection space
+/// </summary>
+class TransformationWAndVP : TransformationBase, PositionStream4, PositionHStream4
+{
+    stage override void PreTransformPosition()
+    {
+        base.PreTransformPosition();
+        streams.PositionWS = mul(streams.Position, Transformation.World);
+    }
+
+    stage override void PostTransformPosition()
+    {
+        base.PostTransformPosition();
+        streams.ShadingPosition = mul(streams.PositionWS, Transformation.ViewProjection);
+        streams.PositionH = streams.ShadingPosition;
+    }
+};

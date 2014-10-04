@@ -1,0 +1,71 @@
+!Package
+Id: 6cb8fbfc-3dad-4152-8841-c069d184770d
+Tags: []
+Meta:
+    Name: MineShip
+    Version: 1.0.0.0
+    Authors: []
+    Owners: []
+    Dependencies:
+        -   Name: Paradox
+            Version: 1.0.0-alpha09
+LocalDependencies: []
+Profiles:
+    -   Name: Shared
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Shared
+                RawImports: []
+            -   Path: MineShip.Game/Effects
+                RawImports: []
+        OutputGroupDirectories: {}
+        Properties: {}
+        ProjectReferences:
+            -   Id: 81338331-4f2a-4801-a715-251e2f3c9fcf
+                Location: MineShip.Game/MineShip.Game.csproj
+                Type: Library
+    -   Name: Windows
+        Platform: Windows
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Windows
+                RawImports: []
+        OutputGroupDirectories: {}
+        Properties:
+            Paradox.GraphicsPlatform: !GraphicsPlatform Direct3D11
+            Paradox.GraphicsProfile: !GraphicsProfile Level_9_1
+        ProjectReferences:
+            -   Id: 965be3ea-47ad-4aad-9ee4-4545b9f09b2c
+                Location: MineShip.Windows/MineShip.Windows.csproj
+                Type: Executable
+    -   Name: Android
+        Platform: Android
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Android
+                RawImports: []
+        OutputGroupDirectories: {}
+        Properties:
+            Paradox.GraphicsPlatform: !GraphicsPlatform OpenGLES
+            Paradox.GraphicsProfile: !GraphicsProfile Level_9_1
+        ProjectReferences:
+            -   Id: ff07b8ad-f84d-44e8-b221-1dad30620888
+                Location: MineShip.Android/MineShip.Android.csproj
+                Type: Executable
+    -   Name: iOS
+        Platform: iOS
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/iOS
+                RawImports: []
+        OutputGroupDirectories: {}
+        Properties:
+            Paradox.GraphicsPlatform: !GraphicsPlatform OpenGLES
+            Paradox.GraphicsProfile: !GraphicsProfile Level_9_1
+        ProjectReferences:
+            -   Id: d39b1048-5b19-4bd6-9cdd-ce861d104577
+                Location: MineShip.iOS/MineShip.iOS.csproj
+                Type: Executable
+ExplicitFolders: []
+Bundles: []
+TemplateFolders: []

@@ -1,0 +1,10 @@
+﻿class ComputeColorParameter : ComputeColor
+{
+    [Color]
+    stage float4 ColorParameter;
+
+    override float4 Compute()
+    {
+        return ColorParameter;
+    }
+};

@@ -1,0 +1,18 @@
+﻿/// <summary>
+/// Defines the structures for shadow mapping.
+/// </summary>
+class ShadowMapBase : ShadowBase
+{
+    struct ShadowMapLevelReceiverInfo
+    {
+        matrix ShadowMapWVP;
+        float4 CascadeTextureCoordsBorder;
+        float3 ShadowLightOffset;
+    };
+
+    struct ShadowMapReceiverInfo
+    {
+        float3 ShadowLightDirection;
+        float ShadowMapDistance;
+    };
+};

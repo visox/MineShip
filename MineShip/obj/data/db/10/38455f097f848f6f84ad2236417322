@@ -1,0 +1,6 @@
+﻿/// <summary>
+/// Enables per-pixel diffuse and specular lighting.
+/// </summary>
+class ShadingDiffuseSpecularPerPixel : ShadingDiffusePerPixel, ShadingSpecularPerPixel
+{
+};

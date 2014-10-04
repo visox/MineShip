@@ -1,0 +1,11 @@
+﻿class ComputeColorOpaque : ComputeColor
+{
+    ComputeColor color1;
+
+    override float4 Compute()
+    {
+        float4 computedColor = color1.Compute();
+        computedColor.w = 1.0;
+        return computedColor;
+    }
+};

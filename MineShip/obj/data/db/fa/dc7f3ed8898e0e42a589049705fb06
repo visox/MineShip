@@ -1,0 +1,8 @@
+/// <summary>
+/// Defines a color stream.
+/// </summary>
+class ColorBase
+{
+    // A color attribute
+    stage stream float4 Color : COLOR;
+};

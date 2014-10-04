@@ -1,0 +1,32 @@
+class SpriteBase : ShaderBase, Texturing
+{
+    // -------------------------------------
+    // streams
+    // -------------------------------------
+    stage stream float4 Position : POSITION;
+
+    // -------------------------------------
+    // uniforms
+    // -------------------------------------
+    // A general transformation matrix
+    stage float4x4 MatrixTransform;
+        
+    // -------------------------------------
+    // VertexShader
+    // -------------------------------------
+    stage override void VSMain()
+    {
+        streams.ShadingPosition = mul(streams.Position, MatrixTransform);
+    }
+
+	// Shading of the sprite
+    stage override void PSMain()
+    {
+        streams.ColorTarget = Shading();
+    }
+
+    stage float4 Shading()
+    {
+        return Texture0.Sample(Sampler, streams.TexCoord);
+    }
+};
