@@ -202,21 +202,26 @@
   <ItemGroup>
     <Compile Include="Blocks\AbstractBlock.cs" />
     <Compile Include="Blocks\Block.cs" />
+    <Compile Include="Blocks\BlockDefinitions.cs" />
     <Compile Include="Blocks\BlocksHolder.cs" />
+    <Compile Include="Blocks\BlocksHolderPatterns\BlocksHolderPatternSupplier.cs" />
     <Compile Include="Draw\DrawManager.cs" />
-    <Compile Include="Draw\IDrawable.cs" />
+    <Compile Include="Draw\ISpaceWorldDrawable.cs" />
     <Compile Include="Effects\MineShipEffectMain.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>MineShipEffectMain.pdxfx</DependentUpon>
     </Compile>
+    <Compile Include="WorldEntities\IMinable.cs" />
     <Compile Include="Screens\AbstractScreen.cs" />
     <Compile Include="Screens\InSpaceScreen.cs" />
     <Compile Include="Screens\MainMenuScreen.cs" />
     <Compile Include="WorldEntities\AbstractWorldEntity.cs" />
+    <Compile Include="WorldEntities\Ships\AbstractEnemyShip.cs" />
     <Compile Include="WorldEntities\Ships\AbstractShip.cs" />
     <Compile Include="WorldEntities\Ships\PlayerShip.cs" />
+    <Compile Include="WorldEntities\Ships\SimpleEnemyShip.cs" />
     <Compile Include="World\MineShipWorld.cs" />
     <None Include="Effects\Permutations.pdxfxlib" />
     <None Include="Effects\MineShipEffectMain.pdxfx">

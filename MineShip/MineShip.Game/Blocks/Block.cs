@@ -11,8 +11,8 @@ namespace MineShip.Blocks
     class Block : AbstractBlock
     {
 
-        public Block(Texture2D texture)
-            :base(texture)
+        public Block(string id)
+            :base(id)
         {
         }
         /*

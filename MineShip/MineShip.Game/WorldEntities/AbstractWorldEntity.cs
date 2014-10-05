@@ -1,6 +1,7 @@
 ﻿using MineShip.Blocks;
 using MineShip.Draw;
 using MineShip.World;
+using SiliconStudio.Core.Mathematics;
 using SiliconStudio.Paradox.Graphics;
 using System;
 using System.Collections.Generic;
@@ -10,25 +11,41 @@ using System.Threading.Tasks;
 
 namespace MineShip.WorldEntities
 {
-    abstract class AbstractWorldEntity : IDrawable
+    abstract class AbstractWorldEntity : ISpaceWorldDrawable
     {
         protected BlocksHolder _blocksHolder;
         protected MineShipWorld _world;
-
-
-        protected AbstractWorldEntity(MineShipWorld world)
+        private Vector2 _worldPosition;
+        public Vector2 WorldPosition
         {
-            this._world = world;
+            get {return _worldPosition;}
+            set 
+            {
+                if (value == _worldPosition)
+                    return;
 
-            this._blocksHolder = new BlocksHolder();
+                _worldPosition = value;
+
+                if (this._blocksHolder != null)
+                    this._blocksHolder.Position = value;
+            }
         }
 
-        public abstract void Draw(SpriteBatch spriteBatch);
-
-
-        protected void DrawBlocks(SpriteBatch spriteBatch)
+        protected AbstractWorldEntity(MineShipWorld world, Vector2 worldPosition)
         {
-            this._blocksHolder.Draw(spriteBatch);
+            this._world = world;
+            this.WorldPosition = worldPosition;
+            
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch, Vector2 worldPositionOffset, float scale)
+        {
+            this._blocksHolder.Draw(spriteBatch, worldPositionOffset, scale);
+        }
+
+        public virtual void Update(double delta)
+        {
+ 
         }
 
 

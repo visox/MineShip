@@ -11,6 +11,7 @@ using SiliconStudio.Paradox.Games;
 using SiliconStudio.Paradox.UI.Controls;
 using SiliconStudio.Paradox.UI;
 using System;
+using SiliconStudio.Paradox.Input;
 
 namespace MineShip
 {
@@ -27,6 +28,7 @@ namespace MineShip
         protected MineShipWorld _mineShipWorld;
         protected MainMenuScreen _mainMenuScreen;
         protected InSpaceScreen _inSpaceScreen;
+        protected AbstractScreen _currentActiveScreen;
 
         protected Boolean _inGame = false;
 
@@ -42,6 +44,16 @@ namespace MineShip
         public AssetManager getAssetManager()
         {
             return this.Asset;
+        }
+
+        public SpriteBatch getSpriteBatch()
+        {
+            return this.spriteBatch;
+        }
+
+        public InputManager getInput()
+        {
+            return this.Input;
         }
 
         protected override async Task LoadContent()
@@ -73,12 +85,31 @@ namespace MineShip
         public void ShowMainMenuScreen()
         {
             _mainMenuScreen.ShowScreen();
+            _currentActiveScreen = _mainMenuScreen;
         }
 
         public void ShowInSpaceScreen()
         {
             _inSpaceScreen.ShowScreen();
+            _currentActiveScreen = _inSpaceScreen;
          //   uiContainer.Content = _inSpaceScreen.ScreenRoot;
+        }
+
+        protected Vector2 _screenSize = new Vector2();
+
+        public Vector2 getScreenSize()
+        {
+         /*   if (_currentActiveScreen.ScreenRoot != null)
+            {
+                _screenSize.X = _currentActiveScreen.ScreenRoot.ActualWidth;
+                _screenSize.Y = _currentActiveScreen.ScreenRoot.ActualHeight;
+            }
+            else
+            {*/
+            _screenSize.X = this.GraphicsDevice.Viewport.Width * this.GraphicsDevice.Viewport.AspectRatio * this.GraphicsDevice.Viewport.AspectRatio;
+            _screenSize.Y = this.GraphicsDevice.Viewport.Height * this.GraphicsDevice.Viewport.AspectRatio * this.GraphicsDevice.Viewport.AspectRatio;
+        //    }
+            return _screenSize;
         }
 
         public void StartNewGame()

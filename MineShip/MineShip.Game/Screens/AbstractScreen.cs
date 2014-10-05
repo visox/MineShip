@@ -5,6 +5,7 @@ using SiliconStudio.Paradox.Games;
 using SiliconStudio.Paradox.Graphics;
 using SiliconStudio.Paradox.UI;
 using SiliconStudio.Paradox.UI.Controls;
+using SiliconStudio.Paradox.UI.Events;
 using SiliconStudio.Paradox.UI.Panels;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace MineShip.Screens
             : base(game.Services)
         {
             _game = game;
+             
         }
 
         protected void CreateScene()

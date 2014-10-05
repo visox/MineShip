@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace MineShip.WorldEntities.Ships
 {
-    abstract class AbstractShip : AbstractWorldEntity
+    abstract class AbstractEnemyShip: AbstractShip
     {
-
-        public AbstractShip(World.MineShipWorld world, Vector2 worldPosition)
+        public AbstractEnemyShip(World.MineShipWorld world, Vector2 worldPosition)
             : base(world, worldPosition)
         {
            
         }
-
     }
 }

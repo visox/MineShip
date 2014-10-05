@@ -1,14 +1,14 @@
-﻿using SiliconStudio.Paradox.Graphics;
+﻿using MineShip.Blocks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MineShip.Draw
+namespace MineShip
 {
-    interface IDrawable
+    public interface IMinable
     {
-        void Draw(SpriteBatch spriteBatch);
+        AbstractBlock DoMine();
     }
 }

@@ -1,4 +1,5 @@
-﻿using SiliconStudio.Paradox.Graphics;
+﻿using SiliconStudio.Core.Mathematics;
+using SiliconStudio.Paradox.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,20 @@ namespace MineShip.Draw
     {
 
 
-        List<IDrawable> _toDraw;
+        List<ISpaceWorldDrawable> _toDraw;
 
-        public DrawManager(List<IDrawable> toDraw)
+        public DrawManager(List<ISpaceWorldDrawable> toDraw)
         {
             _toDraw = toDraw;
         }
 
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 worldPositionOffset, float scale)
         {
             spriteBatch.Begin();
             foreach (var td in _toDraw)
             {
-                td.Draw(spriteBatch);
+                td.Draw(spriteBatch, worldPositionOffset, scale);
             }
             spriteBatch.End();
         }
