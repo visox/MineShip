@@ -1,8 +1,0 @@
-﻿class ComputeColorTextureScaledOffsetSampler<Texture2D TTexture, Semantic TStream, float2 TScale, float2 TOffset, SamplerState TSampler> : ComputeColor
-{
-    stream float2 TexCoord : TStream;
-
-    override float4 Compute() {
-        return TTexture.Sample(TSampler, streams.TexCoord * TScale + TOffset);
-    }
-};

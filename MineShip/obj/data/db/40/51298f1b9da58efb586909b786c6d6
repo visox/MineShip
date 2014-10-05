@@ -1,6 +1,0 @@
-class ComputeColorStream : ComputeColor, ColorBase
-{
-    override float4 Compute() {
-        return streams.Color;
-    }
-};

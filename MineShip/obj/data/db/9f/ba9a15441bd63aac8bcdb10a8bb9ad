@@ -1,8 +1,0 @@
-class ComputeColorTextureDisplacement<Texture2D TTexture, Semantic TStream> : ShaderBase, ComputeColor
-{
-    stage stream float2 TexCoord : TStream;
-
-    override float4 Compute() {
-        return TTexture.SampleLevel(Texturing.Sampler, streams.TexCoord, 0);
-    }
-};

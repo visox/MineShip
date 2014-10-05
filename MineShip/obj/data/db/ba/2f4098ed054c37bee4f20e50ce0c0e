@@ -1,7 +1,0 @@
-class ComputeColorSynthetic : ComputeColor
-{
-    override float4 Compute()
-    {
-        return Material.SpecularColorValue;
-    }
-};

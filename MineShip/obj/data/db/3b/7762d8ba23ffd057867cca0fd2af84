@@ -1,7 +1,0 @@
-class ComputeColor3
-{
-    float3 Compute()
-    {
-        return 0;
-    }
-};

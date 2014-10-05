@@ -1,9 +1,0 @@
-/// <summary>
-/// Retrieves the specular power from a Gbuffer.
-/// </summary>
-class SpecularPowerGBuffer : SpecularPowerBase, GBufferBase, ShaderBase
-{
-    override float SpecularPowerValue() {
-        return GBufferTexture.Load(int3(streams.ShadingPosition.xy, 0), 0).w;
-    }
-};

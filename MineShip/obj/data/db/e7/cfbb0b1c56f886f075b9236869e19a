@@ -1,7 +1,0 @@
-/// <summary>
-/// Abstract class defining the view space position computation method.
-/// </summary>
-class PositionVSBase
-{
-    abstract float3 PositionVS();
-};

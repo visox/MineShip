@@ -1,7 +1,0 @@
-/// <summary>
-/// Defines a world space position stream.
-/// </summary>
-class PositionHStream4
-{
-    stream float4 PositionH : POSITIONWS;
-};

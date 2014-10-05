@@ -1,8 +1,0 @@
-/// <summary>
-/// Defines a shadow map texture.
-/// </summary>
-class ShadowMapUtils
-{
-    [Map("ShadowMapKeys.Texture")]
-    Texture2D shadowMapTexture;
-};
